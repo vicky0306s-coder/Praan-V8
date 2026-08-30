@@ -1,0 +1,113 @@
+@import "tailwindcss";
+@import "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;600;700&display=swap";
+
+:root {
+  color: #173b3b;
+  background-color: #f7f4ed;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f7f4ed;
+    color: #173b3b;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  em, .font-serif, .font-display {
+    font-family: 'Fraunces', serif;
+    letter-spacing: -0.03em;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Sophisticated theme utility classes matching #166458 (jade), #c4684e (terracotta), and #f7f4ed (parchment) */
+.glass-panel {
+  background: #fffdf8;
+  border: 1px solid #e4ded0;
+  box-shadow: 0 10px 30px rgba(22, 100, 88, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.glass-panel-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  background: #ffffff;
+  border-color: #166458;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(22, 100, 88, 0.1);
+}
+
+.glass-nav {
+  background: rgba(247, 244, 237, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid #e4ded0;
+}
+
+.glass-chip-blue {
+  background: rgba(22, 100, 88, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(22, 100, 88, 0.2);
+  color: #166458;
+}
+
+.glass-chip-active {
+  background: #166458;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(22, 100, 88, 0.3);
+  border: 1px solid rgba(244, 189, 100, 0.35);
+}
+
+.glass-btn-primary {
+  background: #c4684e;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(196, 104, 78, 0.28);
+  transition: all 0.2s ease;
+}
+.glass-btn-primary:hover {
+  background: #aa523e;
+  box-shadow: 0 8px 24px rgba(196, 104, 78, 0.38);
+  transform: translateY(-1px);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(22, 100, 88, 0.08);
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-prescription, #printable-prescription * {
+    visibility: visible;
+  }
+  #printable-prescription {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+/* Custom warm parchment scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f7f4ed;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cfbe;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #baaf9c;
+}

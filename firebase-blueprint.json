@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "FacilityDatabase": {
+      "title": "FacilityDatabase",
+      "description": "Federated hospital database record containing patients, teleconsultations, referrals, lab orders, and doctors.",
+      "type": "object",
+      "properties": {
+        "facilityId": {
+          "type": "string",
+          "description": "Unique identifier of the hospital facility"
+        },
+        "patients": {
+          "type": "array",
+          "description": "List of registered patient records"
+        },
+        "teleconsultations": {
+          "type": "array",
+          "description": "List of teleconsultation sessions"
+        },
+        "referrals": {
+          "type": "array",
+          "description": "List of inter-hospital referrals"
+        },
+        "labOrders": {
+          "type": "array",
+          "description": "Point-of-care and laboratory diagnostic orders"
+        },
+        "highRiskRecords": {
+          "type": "array",
+          "description": "High-risk cohort surveillance records"
+        },
+        "doctors": {
+          "type": "array",
+          "description": "Doctor roster and live availability status"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": ["facilityId"]
+    }
+  },
+  "firestore": {
+    "/facility_databases/{facilityId}": {
+      "schema": "FacilityDatabase",
+      "description": "Federated clinical database state for each hospital tier node"
+    }
+  }
+}
